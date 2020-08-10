@@ -20,7 +20,7 @@ func trimDuplicate(arrayStrings []string) []string {
 
 	for _, entry := range arrayStrings {
 		if _, value := keys[strings.ToLower(entry)]; !value {
-			keys[entry] = true
+			keys[strings.ToLower(entry)] = true
 			list = append(list, strings.ToLower(entry))
 		}
 	}
@@ -139,7 +139,6 @@ func main() {
 
 				separator()
 
-				colorsFound = trimDuplicate(colorsFound)
 				colorsFound = trimDuplicate(colorsFound)
 
 				fmt.Println("All colors found :")
